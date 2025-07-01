@@ -1,7 +1,6 @@
 import { type Config } from "tailwindcss";
 
 export default {
-  // content: ["./src/**/*.{html,js}"],
   darkMode: "class",
   theme: {
     fontFamily: {
@@ -39,10 +38,4 @@ export default {
     `./error.{js,ts,vue}`,
     `./app.config.{js,ts}`,
   ],
-  // safelist: [
-  //   'safelisted',
-  //   {
-  //     pattern: /bg-(red|green|blue)-(100|200|300)/,
-  //   },
-  // ]
 } satisfies Config;

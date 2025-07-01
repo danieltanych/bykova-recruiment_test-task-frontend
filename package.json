@@ -41,5 +41,8 @@
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "typescript": "5.8.3"
+  },
+  "dependencies": {
+    "vue-multiselect": "^3.2.0"
   }
 }

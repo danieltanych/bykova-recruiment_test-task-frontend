@@ -10,7 +10,6 @@ if (import.meta.client) {
 }
 
 onMounted(() => {
-  // Remove loading state after initial render
   nextTick(() => {
     isLoading.value = false;
   });
@@ -37,7 +36,6 @@ useHead({
     ></div>
     <NuxtLayout>
       <div>
-        <CookieBanner />
         <NuxtPage />
       </div>
     </NuxtLayout>

@@ -3,7 +3,7 @@ import fr from "../locales/fr-FR.json";
 import ar from "../locales/ar-AR.json";
 
 export default defineI18nConfig(() => {
-  const config = useRuntimeConfig()
+  const config = useRuntimeConfig();
 
   return {
     legacy: false,
@@ -27,9 +27,8 @@ export default defineI18nConfig(() => {
     ],
     detectBrowserLanguage: {
       useCookie: true,
-      cookieKey: 'nuxt-lang',
-      redirectOn: 'root'
-    }
-  }
-})
-
+      cookieKey: "nuxt-lang",
+      redirectOn: "root",
+    },
+  };
+});

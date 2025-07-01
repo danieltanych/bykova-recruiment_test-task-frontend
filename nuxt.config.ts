@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 import { defineNuxtConfig } from "nuxt/config";
 import en from "./locales/en-US.json";
 import fr from "./locales/fr-FR.json";
@@ -10,8 +9,8 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      baseUrl: process.env.VITE_BASE_URL //  || 'http://localhost:3000'
-    }
+      baseUrl: process.env.VITE_BASE_URL,
+    },
   },
 
   nitro: {
@@ -59,11 +58,15 @@ export default defineNuxtConfig({
   },
 
   colorMode: {
+    preference: "light",
+    fallback: "light",
     classSuffix: "",
+    storage: "localStorage",
+    storageKey: "nuxt-color-mode",
   },
 
   image: {
-    provider: "ipx", // change to e.g 'vercel' if hosted on vercel
+    provider: "ipx",
     quality: 80,
     format: ["png", "jpeg", "webp"],
   },
@@ -84,37 +87,36 @@ export default defineNuxtConfig({
       useCookie: false,
       alwaysRedirect: true,
       fallbackLocale: "en-US",
-      redirectOn: "root", // recommended
+      redirectOn: "root",
     },
   },
 
   cookieControl: {
-    cookieExpiryOffsetMs: 1000 * 60 * 60 * 24 * 365, // one year
-    // set all these to true for highest GDPR enforcement
+    cookieExpiryOffsetMs: 1000 * 60 * 60 * 24 * 365,
     isAcceptNecessaryButtonEnabled: true,
     isModalForced: false,
     isCookieIdVisible: true,
     closeModalOnClickOutside: true,
-    // show cookie button
     isControlButtonEnabled: true,
-    // disable to get unstyled css for tailwind
     isCssEnabled: false,
     isDashInDescriptionEnabled: false,
     cookies: {
-      necessary: [{
-        name: {
-          fr: fr.cookies.necessary.title,
-          en: en.cookies.necessary.title,
-          ar: ar.cookies.necessary.title,
+      necessary: [
+        {
+          name: {
+            fr: fr.cookies.necessary.title,
+            en: en.cookies.necessary.title,
+            ar: ar.cookies.necessary.title,
+          },
+          description: {
+            fr: fr.cookies.necessary.description,
+            en: en.cookies.necessary.description,
+            ar: ar.cookies.necessary.description,
+          },
+          isPreselected: true,
+          id: "necessary",
         },
-        description: {
-          fr: fr.cookies.necessary.description,
-          en: en.cookies.necessary.description,
-          ar: ar.cookies.necessary.description,
-        },
-        isPreselected: true,
-        id: "necessary"
-      }],
+      ],
       optional: [],
     },
     locales: ["en", "fr", "ar"],
